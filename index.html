@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smile Matters Dental | Book Online</title>
+<meta name="description" content="Book your dental appointment online at Smile Matters in Pasig, Marikina or Caloocan. Create a patient account, choose your dentist, date and time, and get email confirmation.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<meta name="theme-color" content="#0E3A5F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/base.css?v=4">
+<link rel="stylesheet" href="assets/app.css?v=4">
+<link rel="stylesheet" href="assets/sm.css?v=1">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Dentist","name":"Smile Matters Dental Care Center","logo":"assets/logo.png","email":"smilemattersdentalcarecenter@yahoo.com","telephone":"+639955800145","address":{"@type":"PostalAddress","streetAddress":"180 Dr. Sixto Antonio Ave., Brgy. Caniogan","addressLocality":"Pasig City","addressRegion":"Metro Manila","postalCode":"1600","addressCountry":"PH"},"sameAs":["https://www.facebook.com/SmileMattersDental/"]}
+</script>
+</head>
+<body>
+
+<div class="ribbon">
+  <div class="wrap">
+    <span><b>DESIGN MOCK-UP · STANDARD PACKAGE</b> · Public site &amp; patient portal. <span class="tbc">Dashed highlight</span> = still needed from the clinic.</span>
+    <span class="rb">
+      <a class="lk" href="admin.html" style="background:var(--p900);color:#fff;border-radius:999px;padding:4px 12px;font-weight:700;font-size:.76rem">Open admin dashboard →</a>
+      <button class="lk" data-act="workflow" type="button">Workflow</button>
+      <button class="lk" data-act="scope" type="button">Package scope</button>
+      <button class="lk" data-act="reset" type="button">Reset demo data</button>
+      <label><input type="checkbox" id="notesToggle"> Annotations</label>
+    </span>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <span id="topLeft"></span>
+    <span class="hide-m" id="topMid"></span>
+    <a id="topPhone" href="tel:+639495871003"></a>
+  </div>
+</div>
+
+<header class="nav" data-note="Responsive navigation · Patient Portal entry">
+  <div class="wrap">
+    <a class="logo" href="#/home" aria-label="Smile Matters home">
+      <span class="logo-mark"><img src="assets/logo.png" alt="Smile Matters logo" width="50" height="50"></span>
+      <span><b>Smile Matters</b><small>Dental Care · Pasig · Marikina · Caloocan</small></span>
+    </a>
+    <nav class="links" id="links" aria-label="Main">
+      <a class="l" href="#/home" data-r="home">Home</a>
+      <a class="l" href="#/about" data-r="about">About Us</a>
+      <a class="l" href="#/services" data-r="services">Services</a>
+      <a class="l" href="#/book" data-r="book">Book Appointment</a>
+      <a class="l" href="#/contact" data-r="contact">Contact</a>
+      <a class="btn btn-p btn-sm" href="#/portal" id="portalBtn" style="margin-left:8px"><svg class="ic"><use href="#i-user"/></svg><span id="portalBtnT">Patient Portal</span></a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg class="ic"><use href="#i-grid"/></svg></button>
+  </div>
+</header>
+
+<main>
+<!-- ===================== HOME ===================== -->
+<div data-page="home">
+  <section class="sm-hero" data-note="Home · Hero with branch switcher (branches managed in Admin → Branches)">
+    <div class="sm-orb sm-orb-a" aria-hidden="true"></div><div class="sm-orb sm-orb-b" aria-hidden="true"></div>
+    <div class="wrap sm-hero-grid">
+      <div class="sm-hero-copy">
+        <span class="sm-tag" id="heroEyebrow">Dental clinics in Metro Manila</span>
+        <h1 class="sm-h1">Your smile <em>matters.</em></h1>
+        <p class="sm-lead">Modern and affordable dental care, from routine cleanings to cosmetic makeovers. Three Smile Matters clinics in Pasig, Marikina and Caloocan, one patient account for all of them.</p>
+        <div class="sm-cta">
+          <a class="btn btn-p btn-lg" href="#/book"><svg class="ic"><use href="#i-cal"/></svg>Book an appointment</a>
+          <a class="sm-textlink" href="#/home" data-scroll="smBranchSec">Find your nearest branch<svg class="ic"><use href="#i-arrow"/></svg></a>
+        </div>
+        <ul class="sm-hero-points">
+          <li><b>100%</b><span>recommend us on Facebook</span></li>
+          <li><b>HMO</b><span>accepted for selected procedures</span></li>
+          <li><b>7 days</b><span>a week at our Pasig clinic</span></li>
+        </ul>
+      </div>
+      <div class="sm-switch" id="smSwitch" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="sm-quick" data-note="Module: Appointment Booking (shortcut, branch-aware)">
+    <div class="wrap">
+      <div class="quick sm-quick-card">
+        <div class="sm-quick-label"><b>Quick booking</b><small id="heroHours">Hours<small>Daily</small></small></div>
+        <form id="quickForm">
+          <div id="qbWrap"><label for="qb">Branch</label><select id="qb" class="inp"></select></div>
+          <div><label for="qs">Treatment</label><select id="qs" class="inp"></select></div>
+          <div><label for="qd">Preferred date</label><input id="qd" type="date" class="inp"></div>
+          <button class="btn btn-p" type="submit">See open slots<svg class="ic"><use href="#i-arrow"/></svg></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="stats sm-stats" data-note="Trust indicators"><div class="wrap" id="statsRow"></div></div>
+
+  <section class="sm-services" data-note="Home · Services (managed in Admin → Services)">
+    <div class="wrap">
+      <div class="sm-head">
+        <div><span class="sm-tag">What we do</span><h2>Care for every <em>kind of smile</em></h2></div>
+        <p class="lead">Orthodontics, cosmetic dentistry, oral and laser surgery, implants and prosthodontics, all under the Smile Matters name.</p>
+      </div>
+      <div class="sm-bento" id="smServices"></div>
+    </div>
+  </section>
+
+  <section class="sm-ba" data-note="Home · Before and after (case photos from the Smile Matters Facebook page)">
+    <div class="wrap sm-ba-grid">
+      <div class="sm-ba-copy">
+        <span class="sm-tag">Real results</span>
+        <h2>Drag to see the <em>difference</em></h2>
+        <p class="lead">A veneer makeover shared on our Facebook page. Slide the handle to compare the smile before and after treatment.</p>
+        <div class="sm-ba-meta">
+          <div><b>Veneers</b><small>Composite, Ceramage, Emax or zirconia</small></div>
+          <div><b>Smile design</b><small>Planned with you before we start</small></div>
+        </div>
+        <a class="btn btn-o" href="#/book" data-svc-book="cosmetic"><svg class="ic"><use href="#i-cal"/></svg>Book a smile consultation</a>
+      </div>
+      <div class="sm-ba-stack">
+        <div class="sm-compare" id="smCompare" style="--pos:50%">
+          <img class="after" src="assets/img/ba-after.jpg" alt="Smile after veneers">
+          <div class="before"><img src="assets/img/ba-before.jpg" alt="Smile before veneers"></div>
+          <span class="lbl l">Before</span><span class="lbl r">After</span>
+          <div class="sm-handle" aria-hidden="true"><span></span></div>
+          <input type="range" min="0" max="100" value="50" id="smRange" aria-label="Compare before and after">
+        </div>
+        <figure class="sm-lab"><img src="assets/img/result-zirconia.jpg" alt="Zirconia crowns from the lab and in the patient's smile"><figcaption><b>10-unit zirconia crowns</b>From the lab to the final smile</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sm-branches" id="smBranchSec" data-note="Home · Branches (managed in Admin → Branches)">
+    <div class="wrap">
+      <div class="sm-head center"><div><span class="sm-tag">Our clinics</span><h2>Three branches, <em>one standard of care</em></h2></div><p class="lead">Book at the branch closest to you. Your patient account and appointment history work at every Smile Matters clinic.</p></div>
+      <div class="sm-branch-grid" id="smBranches"></div>
+    </div>
+  </section>
+
+  <section class="sm-voices" data-note="Home · Patient reviews (from the Smile Matters Facebook pages)">
+    <div class="wrap">
+      <div class="sm-head"><div><span class="sm-tag">Patient stories</span><h2>Why patients <em>keep coming back</em></h2></div><p class="lead">Excerpts from reviews on our Pasig and Marikina Facebook pages.</p></div>
+      <div class="sm-masonry" id="testi"></div>
+    </div>
+  </section>
+
+  <section class="sm-flow" data-note="Home · How online booking works + patient portal">
+    <div class="wrap sm-flow-grid">
+      <div>
+        <span class="sm-tag">Book online</span>
+        <h2>From request to <em>confirmed</em> in five steps</h2>
+        <ol class="sm-steps" id="stepsRow">
+          <li><b>1</b><div><h3>Create an account</h3><p>Register once. It works at all three branches.</p></div></li>
+          <li><b>2</b><div><h3>Choose branch, treatment and time</h3><p>Only open slots are shown.</p></div></li>
+          <li><b>3</b><div><h3>Send your request</h3><p>A booking-received email arrives right away.</p></div></li>
+          <li><b>4</b><div><h3>The branch confirms</h3><p>Staff approve, or suggest a new schedule.</p></div></li>
+          <li><b>5</b><div><h3>Visit Smile Matters</h3><p>Get a reminder the day before your visit.</p></div></li>
+        </ol>
+      </div>
+      <div class="sm-portal" id="portalSplit">
+        <div class="portal-prev" aria-hidden="true">
+          <div class="bar"><i></i><i></i><i></i><span style="margin-left:10px;font-size:.76rem;color:var(--muted);font-weight:600">My appointments</span></div>
+          <div class="body">
+            <div class="pp-row"><div><b>Emax veneers try-in</b><br><small style="color:var(--muted)">Thu, Oct 29 · 10:00 AM · Pasig</small></div><span class="pill s-Approved">Approved</span></div>
+            <div class="pp-row"><div><b>Odontectomy</b><br><small style="color:var(--muted)">Mon, Nov 2 · 2:00 PM · Marikina</small></div><span class="pill s-Pending">Pending</span></div>
+            <div class="pp-row"><div><b>Oral prophylaxis</b><br><small style="color:var(--muted)">Sep 12 · 11:00 AM · Caloocan</small></div><span class="pill s-Completed">Completed</span></div>
+            <small class="sample" style="justify-self:start;background:var(--warn-bg);color:var(--warn);font-weight:700;border-radius:6px;padding:2px 8px">SAMPLE DATA</small>
+          </div>
+        </div>
+        <p>Track every visit at every branch in your patient portal.</p>
+        <a class="btn btn-o" href="#/portal">Create your free account<svg class="ic"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="sm-final" data-note="Home · Final call to action">
+    <div class="wrap"><div class="sm-final-card">
+      <img src="assets/logo.png" alt="" class="sm-final-logo">
+      <div><h2>Remember, your smile <em>matters.</em></h2><p>Book online at Pasig, Marikina or Caloocan. Strictly by appointment, so your slot is always ready.</p></div>
+      <a class="btn btn-w btn-lg" href="#/book"><svg class="ic"><use href="#i-cal"/></svg>Book now</a>
+    </div></div>
+  </section>
+</div>
+
+
+<!-- ===================== ABOUT ===================== -->
+<div data-page="about" hidden>
+  <div class="phero" data-note="About Us · Clinic profile">
+    <div class="wrap">
+      <div class="crumbs"><a href="#/home">Home</a> / About Us</div>
+      <span class="eyebrow">About Smile Matters</span>
+      <h1 style="margin-top:12px">Because your smile matters.</h1>
+      <p class="lead">Smile Matters Dental Care Center started in Pasig and now cares for patients in three clinics: Pasig, SMILE 2.0 in Marikina, and Smile Matters Dental Studio in Caloocan.</p>
+    </div>
+  </div>
+  <section style="padding-top:36px">
+    <div class="wrap about-grid">
+      <div>
+        <h2 style="margin-bottom:16px">Modern and affordable dental care</h2>
+        <p style="color:var(--muted);margin-bottom:14px">We are dedicated to providing modern and affordable dental care. From routine cleanings to cosmetic makeovers, our experienced team is here to help you smile with confidence.</p>
+        <p style="color:var(--muted);margin-bottom:24px">Patients tell us what they value most: dentists who set expectations and explain every step, a clean and hygienic clinic, and flexible payment options.</p>
+        <ul class="checks">
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Modern, affordable care</b> with flexible payment options and HMO for selected procedures.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>Dentists who explain first</b>, so every procedure feels calm and clear.</span></li>
+          <li><svg class="ic"><use href="#i-check"/></svg><span><b>One account, three branches</b>, with online booking and a patient portal.</span></li>
+        </ul>
+      </div>
+      <img class="simg" style="min-height:400px;object-position:50% 30%" src="assets/img/caloocan-team.jpg" alt="The Smile Matters Dental Studio team in Caloocan">
+    </div>
+  </section>
+  <section style="background:var(--p50)" data-note="About Us · Dentists (managed in Admin → Dentist schedules)">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Meet the dentists</span><h2>The people behind your smile</h2><p class="lead"><span class="tbc">Names, credentials, PRC numbers and photos to be provided by the clinic. The same profiles feed the booking screen.</span></p></div>
+      <div class="team" id="teamGrid"></div>
+    </div>
+  </section>
+  <section data-note="About Us · Facilities">
+    <div class="wrap about-grid" style="align-items:start">
+      <div><span class="eyebrow">Our journey</span><h2 style="margin:10px 0 18px">Growing with our community</h2>
+        <div class="timeline">
+          <div class="tl"><b>Pasig</b><span>Smile Matters Dental Care Center opens on Dr. Sixto Antonio Avenue, Caniogan. It celebrated its 8th anniversary in January 2024.</span></div>
+          <div class="tl"><b>2019</b><span>Smile Matters Dental Studio begins creating smiles at Northwest Plaza, Monumento, Caloocan.</span></div>
+          
+          <div class="tl"><b>Marikina</b><span>SMILE 2.0 by Smile Matters opens in SSS Village, Concepcion 2. Online booking for all three branches follows.</span></div>
+        </div>
+        <p class="hint" style="margin-top:12px"><span class="tbc">Confirm milestones with the clinic</span></p>
+      </div>
+      <div class="gallery">
+        <img class="simg" src="assets/img/pasig-team.jpg" alt="The Smile Matters Pasig team at the lit reception wall" style="object-position:50% 30%">
+        <img class="simg" src="assets/img/marikina-chair.jpg" alt="A treatment room at SMILE 2.0 Marikina">
+        <img class="simg" src="assets/img/marikina-dentist.jpg" alt="A dentist at work in SMILE 2.0 Marikina">
+        <div class="ph"><div><svg class="ic"><use href="#i-img"/></svg>Sterilization</div></div>
+        <div class="ph"><div><svg class="ic"><use href="#i-img"/></svg>Waiting area</div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== SERVICES ===================== -->
+<div data-page="services" hidden>
+  <div class="phero" data-note="Services · Dental services (managed in Admin → Services)">
+    <div class="wrap">
+      <div class="crumbs"><a href="#/home">Home</a> / Services</div>
+      <span class="eyebrow">Our services</span>
+      <h1 style="margin-top:12px">Dental care for every stage of your smile.</h1>
+      <p class="lead">Explore what we offer, then book the service you need in a few clicks.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="filters" id="svcFilters"></div>
+    <div id="svcList"></div>
+    <div class="note" style="margin:40px 0 0"><svg class="ic"><use href="#i-shield"/></svg><span>Treatment recommendations depend on your dentist's assessment. Descriptions are for general information and are not a diagnosis. <span class="tbc">Clinic to review service wording &amp; pricing policy.</span></span></div>
+  </div>
+  <section style="padding-top:60px"><div class="wrap"><div class="cta">
+    <div><h2>Not sure where to start?</h2><p>Book a consultation. Our dentist will assess and recommend the right treatment.</p></div>
+    <a class="btn btn-y" href="#/book" style="position:relative;z-index:1"><svg class="ic"><use href="#i-cal"/></svg>Book consultation</a>
+  </div></div></section>
+</div>
+
+<!-- ===================== BOOK ===================== -->
+<div data-page="book" hidden>
+  <div class="phero" data-note="Module: Appointment Booking">
+    <div class="wrap">
+      <div class="crumbs"><a href="#/home">Home</a> / Book Appointment</div>
+      <span class="eyebrow">Online booking</span>
+      <h1 style="margin-top:12px" id="bookTitle">Book an appointment</h1>
+      <p class="lead">Choose your branch and service, pick an open slot, and send your request. Our staff will confirm by email.</p>
+    </div>
+  </div>
+  <section style="padding-top:28px"><div class="wrap"><div class="wz" id="bookRoot"></div></div></section>
+</div>
+
+<!-- ===================== PORTAL ===================== -->
+<div data-page="portal" hidden>
+  <div class="phero" data-note="Module: Patient Registration &amp; Login">
+    <div class="wrap">
+      <div class="crumbs"><a href="#/home">Home</a> / Patient Portal</div>
+      <span class="eyebrow">Patient portal</span>
+      <h1 style="margin-top:12px" id="portalTitle">Welcome</h1>
+    </div>
+  </div>
+  <section style="padding-top:28px"><div class="wrap" id="portalRoot"></div></section>
+</div>
+
+<!-- ===================== CONTACT ===================== -->
+<div data-page="contact" hidden>
+  <div class="phero" data-note="Contact · Location and inquiry page">
+    <div class="wrap">
+      <div class="crumbs"><a href="#/home">Home</a> / Contact</div>
+      <span class="eyebrow">Get in touch</span>
+      <h1 style="margin-top:12px">Visit us or send an inquiry</h1>
+      <p class="lead" id="contactLead">Have a question before you book? Send us a message, or find us at any of our branches.</p>
+    </div>
+  </div>
+  <section style="padding-top:28px">
+    <div class="wrap c-grid">
+      <div class="card" style="padding:clamp(20px,3vw,34px)">
+        <div id="inqBox">
+          <h2 style="font-size:1.6rem;margin-bottom:18px">Send us a message</h2>
+          <form id="msgForm" novalidate>
+            <div class="form-grid">
+              <div class="field"><label for="m_name">Full name <span class="req">*</span></label><input class="inp" id="m_name" name="name" placeholder="Your name"><div class="err" data-e="name"></div></div>
+              <div class="field"><label for="m_email">Email <span class="req">*</span></label><input class="inp" id="m_email" name="email" type="email" placeholder="you@email.com"><div class="err" data-e="email"></div></div>
+              <div class="field full" id="m_brWrap"><label for="m_br">Which branch is this about?</label><select class="inp" id="m_br" name="branch"></select></div>
+              <div class="field full"><label for="m_sub">Subject</label><input class="inp" id="m_sub" name="subject" placeholder="e.g. Question about braces"></div>
+              <div class="field full"><label for="m_msg">Message <span class="req">*</span></label><textarea class="inp" id="m_msg" name="message" placeholder="How can we help?"></textarea><div class="err" data-e="message"></div></div>
+              <div class="full"><button class="btn btn-p" type="submit" style="width:100%"><svg class="ic"><use href="#i-mail"/></svg>Send message</button></div>
+            </div>
+          </form>
+        </div>
+        <div class="success" id="msgOk" hidden>
+          <div class="ok"><svg class="ic"><use href="#i-check"/></svg></div>
+          <h2 style="font-size:1.8rem">Message sent!</h2>
+          <p class="lead" style="margin:10px auto 0">Thank you. We'll reply to your email soon.</p>
+          <div class="refbox" id="msgRef"></div><br>
+          <button class="btn btn-o" data-act="msg-again" type="button">Send another</button>
+        </div>
+      </div>
+      <aside class="side">
+        <div id="contactBranches" style="display:grid;gap:18px" data-note="Branch details (managed in Admin → Branches)"></div>
+        <div class="map" data-note="Location · Google Maps">
+          <div class="mh" id="mapChips"></div>
+          <iframe id="mapFrame" title="Clinic location map" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div class="mfoot"><span id="mapAddr"></span><a class="btn btn-o btn-sm" id="mapDir" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Directions</a></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a class="logo" href="#/home"><span class="logo-mark"><img src="assets/logo.png" alt="Smile Matters logo" width="50" height="50"></span><span><b>Smile Matters</b><small>Dental Care</small></span></a>
+        <p style="margin-top:16px;font-size:.92rem;max-width:34ch">Your smile matters. Modern and affordable dental care in Pasig, Marikina and Caloocan.</p>
+        <div class="soc"><a href="https://www.facebook.com/SmileMattersDental/" target="_blank" rel="noopener" aria-label="Facebook, Pasig">f</a><a href="https://www.instagram.com/smilemattersdentalcarecenter" target="_blank" rel="noopener" aria-label="Instagram">ig</a><a href="http://tiktok.com/@dra.jen" target="_blank" rel="noopener" aria-label="TikTok">tt</a></div>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="#/home">Home</a></li><li><a href="#/about">About Us</a></li><li><a href="#/services">Services</a></li><li><a href="#/book">Book Appointment</a></li><li><a href="#/portal">Patient Portal</a></li><li><a href="#/contact">Contact</a></li></ul></div>
+      <div><h4>Services</h4><ul id="footSvc"></ul></div>
+      <div><h4>Visit us</h4><ul id="footVisit"></ul></div>
+    </div>
+    <div class="f-bot"><span>© 2026 Smile Matters Dental. All rights reserved.</span><span><a href="admin.html">Staff login</a> · <span class="tbc" style="color:#5b4300">Privacy policy TBC</span></span></div>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Quick actions">
+  <a id="mbCall" href="tel:+639495871003"><svg class="ic"><use href="#i-phone"/></svg>Call</a>
+  <a href="#/portal"><svg class="ic"><use href="#i-user"/></svg>Portal</a>
+  <a class="pri" href="#/book"><svg class="ic"><use href="#i-cal"/></svg>Book</a>
+</nav>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Details"></aside>
+<div class="modal" id="modal"><div class="mbox" id="mbox"><div class="mhead"><b id="mtitle"></b><button data-act="close-modal" aria-label="Close">✕</button></div><div id="mbody"></div></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="assets/core.js?v=4"></script>
+<script src="assets/site.js?v=4"></script>
+<script src="assets/sm.js?v=1"></script>
+</body>
+</html>
